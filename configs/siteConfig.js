@@ -4,11 +4,11 @@
 var path = require('path');
 
 var appSettings = {
-    prod: false,
+    prod: true,
     path: path.normalize(path.join(__dirname, '..')),
     port: process.env.NODE_PORT || 3310,
     downloadFolder: 'download/',
-    appName: 'app-debug.apk'
+    appName: 'zc-phone.apk'
 };
 
 module.exports = appSettings;

@@ -1,0 +1,52 @@
+//
+   Created by halfthin on 2015/10/29.
+extends layout
+
+block content
+    .banner
+        .container
+            .banner-desc.col-md-7
+                .subject
+                    p.title 找人， 就是那么简单
+                    p.subtitle 海量联系人， 诠释人脉
+                    a.btn.btn-lg.btn-success(href="/app.apk" target="new")
+                        img(src="/images/android.png" alt="android")
+                        span 免费下载
+                .version
+                    p 当前版本 v1.0.21
+            .banner-picture.col-md-5
+                .banner-items
+                    img(src="/images/list.jpg" alt="众成电话本 联系人")
+
+    .features
+        .container
+            .row.feature-list
+                .col-md-4.feature-item
+                    .panel
+                        .panel-heading
+                            .panel-title 关键词查找
+                        .panel-body
+                            img(src="/images/features_keyword.jpg" alt="关键词查找")
+
+                            p “我记得有个人口才很好，简直是个演讲家”
+                            p -- 设个关键词：“演讲”, 方便以后快速找到他
+
+                .col-md-4.feature-item
+                    .panel
+                        .panel-heading
+                            .panel-title 蓝牙同步联系人
+                        .panel-body
+                            img(src="/images/features_bt.jpg" alt="与其它手机同步")
+
+                            p “肥荣的资料更新啦？ 分享一下吧”
+                            p -- 我们有共同的联系人，那就同步一下咯
+
+                .col-md-4.feature-item
+                    .panel
+                        .panel-heading
+                            .panel-title 批量更新
+                        .panel-body
+                            img(src="/images/features_batch_filter.jpg" alt="批量更新")
+
+                            p “你知道吗，原来他们都是同一个省的”
+                                p -- 何不一次性在他们的关键词里加个省名呢

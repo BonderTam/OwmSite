@@ -6,12 +6,13 @@ var fs = require('fs');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('index', {title: 'Express'});
+    res.render('home', {title: '众成电话本'});
+
 });
 
 router.get('/app.apk', function (req, res) {
     var fileName = path.join(siteConfig.path, siteConfig.downloadFolder, siteConfig.appName);
-    console.log(fileName);
+    //console.log(fileName);
 
     var fileState = fs.statSync(fileName);
 

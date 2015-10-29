@@ -1,0 +1,156 @@
+@gray-darker: #222;
+// #222
+@gray-dark: #333;
+// #333
+@gray: #555;
+// #555
+@gray-light: #777;
+// #777
+@gray-lighter: #eee;
+// #eee
+
+@brand-primary: #337ab7;
+// #337ab7
+@brand-success: #5cb85c;
+@brand-info: #5bc0de;
+@brand-warning: #f0ad4e;
+@brand-danger: #d9534f;
+// Mixin
+.clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.top-bar {
+  background: #F8F8F8;
+  height: 80px;
+  .logo {
+    float: left;
+    display: block;
+    height: 80px;
+    line-height: 80px;
+    width: 350px;
+    a, a:hover, a:visited, a:active {
+      text-decoration: none;
+      color: #000;
+      font-size: xx-large;
+    }
+    h3 {
+      margin: 0;
+      vertical-align: middle;
+      display: inline-block;
+      p {
+        margin: 0;
+        display: block;
+        text-align: right;
+        font-size: 14px;
+        color: @gray;
+      }
+    }
+  }
+
+  .links {
+    float: right;
+    text-align: right;
+    a {
+      line-height: 80px;
+      font-size: large;
+    }
+  }
+
+}
+
+.banner {
+  padding: 30px 0;
+  border-bottom: solid 1px @gray-lighter;
+  .banner-desc {
+    .subject {
+      .center();
+      margin: auto 0 20px 0;
+      text-align: center;
+
+      .title {
+        font-size: 48px;
+        font-weight: bold;
+      }
+      .subtitle {
+        font-size: 28px;
+        color: @gray;
+      }
+      a {
+        span {
+          margin-left: 20px;
+        }
+      }
+    }
+    .version {
+      margin-top: 15px;
+      .center();
+      text-align: center;
+    }
+  }
+  .banner-picture {
+    .banner-items {
+      .center();
+      text-align: center;
+    }
+  }
+}
+
+.features {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.panel-heading {
+  border-bottom: solid 1px @gray-lighter;
+  .panel-title {
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+  }
+}
+
+.panel-body {
+  text-align: center;
+  img {
+    margin-bottom: 20px;
+  }
+}
+
+.page-footer {
+  background: #F8F8F8;
+  height: 80px;
+  ul.nav {
+    li {
+      float: left;
+      margin-left: 15px;
+      a {
+        line-height: 60px;
+        font-size: large;
+      }
+    }
+    li:first-of-type {
+      margin-left: 0;
+      border-left: none;
+    }
+  }
+}

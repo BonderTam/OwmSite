@@ -1,0 +1,40 @@
+.mod-top-bar .center {
+  width: 600px !important;
+}
+.mod-banner {
+  height: auto !important;
+}
+.mod-banner .center {
+  width: 600px !important;
+  padding-bottom: 20px;
+}
+.mod-banner .center .mod-banner-desc {
+  width: auto !important;
+  height: auto !important;
+}
+.mod-banner .center .mod-banner-desc .subject {
+  margin: 20px auto;
+}
+.mod-banner .center .mod-banner-picture {
+  height: auto !important;
+  display: block !important;
+  float: none !important;
+}
+.mod-feature {
+  margin: 20px 0;
+}
+.mod-feature .center {
+  width: 600px !important;
+}
+.mod-feature .center .mod-feature-list {
+  zoom: 1;
+}
+.mod-feature .center .mod-feature-list .mod-feature_item {
+  margin-top: 40px;
+}
+.mod-feature .center .mod-feature-list .moe-feature_item:first-of-type {
+  margin-top: 0;
+}
+.mod-footer .center {
+  width: 600px !important;
+}

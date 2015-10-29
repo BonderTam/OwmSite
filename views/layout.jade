@@ -2,6 +2,30 @@ doctype html
 html
     head
         title= title
-        link(rel='stylesheet', href='/stylesheets/style.css')
+        meta(http-equiv="Content-Type",content="text/html; charset=utf-8")
+        mata(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+        link(rel='stylesheet', href='/bootstrap-3.3.5-dist/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/app.css')
+        block head
     body
-        block content
+        .top-bar
+            .container
+                .logo
+                    a(href="/")
+                        img(src="/images/logo.png" alt="众成电话本")
+                        h3 众成电话本
+                            p 就是那么简单
+                .links
+                    a(href="#") 功能说明
+                .clearfix
+        .container
+            block content
+
+
+        .page-footer
+            .container
+                ul.nav
+                    li
+                        a(href="") 关于众成电话本
+                    li
+                        a(href="mailto:bingt65+owm@gmail.com") 联系我们

@@ -16,12 +16,24 @@ module.exports = function (grunt) {
                 files: ['public/stylesheets/*.less'],
                 tasks: ['less:dev'],
                 options: {nospawn: true}
+            },
+            server: {
+                files: ['.rebooted'],
+                options: {
+                    livereload: true
+                }
             }
         },
 
         less: {
             dev: {
-                files: {'public/stylesheets/style.css': 'public/stylesheets/style.less'},
+                files: [{
+                    expand: true,
+                    cwd: 'public/stylesheets',
+                    src: ['*.less'],
+                    dest: 'public/stylesheets',
+                    ext: '.css'
+                }],
                 options: {
                     paths: ['public/assets/css'],
                     compress: false,
@@ -30,10 +42,12 @@ module.exports = function (grunt) {
                     strictUnits: true,
                     strictImports: true
                 }
+
+
             },
             prod: {
                 options: {
-                    files: ['public/stylesheets/style.css', 'public/stylesheets/style.less'],
+                    files: {'public/stylesheets/style.css': 'public/stylesheets/style.less'},
                     paths: ['assets/css'],
                     plugins: [
                         new require('less-plugin-autoprefix')({browsers: ['last 2 versions']}),
@@ -48,7 +62,8 @@ module.exports = function (grunt) {
         },
 
         concurrent: {
-            dev: ['jshint', 'less:dev', 'nodemon', 'watch'],
+            dev: ['jshint', 'less:dev', 'nodemon:dev', 'watch'],
+            prod: ['jshint', 'less:prod', 'nodemon:prod', 'watch'],
             options: {
                 logConcurrentOutput: true
             }
@@ -60,7 +75,7 @@ module.exports = function (grunt) {
                 options: {
                     nodeArgs: [],
                     env: {
-                        'NODE_ENV': 'development'
+                        PORT: 3310
                     },
 
                     callback: function (nodemon) {
@@ -69,7 +84,40 @@ module.exports = function (grunt) {
                         });
                     }
                 }
+            },
+            prod: {
+                script: 'bin/www',
+                options: {
+                    nodeArgs: [],
+                    env: {
+                        PORT: 80
+                    },
+                    // omit this property if you aren't serving HTML files and
+                    // don't want to open a browser tab on start
+                    callback: function (nodemon) {
+                        nodemon.on('log', function (event) {
+                            console.log(event.colour);
+                        });
+
+                        // opens browser on initial server start
+                        nodemon.on('config:update', function () {
+                            // Delay before server listens on port
+                            setTimeout(function () {
+                                //require('open')('http://localhost:5455');
+                            }, 1000);
+                        });
+
+                        // refreshes browser when server reboots
+                        nodemon.on('restart', function () {
+                            // Delay before server listens on port
+                            setTimeout(function () {
+                                require('fs').writeFileSync('.rebooted', 'rebooted');
+                            }, 1000);
+                        });
+                    }
+                }
             }
+
         }
     });
 
@@ -84,4 +132,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-concurrent');
 
     grunt.registerTask('default', ['concurrent:dev']);
+    grunt.registerTask('prod', ['concurrent:prod']);
 };
