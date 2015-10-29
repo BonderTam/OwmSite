@@ -9,7 +9,7 @@ var routes = require('./routes/index');
 //var users = require('./routes/users');
 var AntiLeech = require('express-anti-leech');//防止盗链
 var protectedType = ['.png', '.jpg', '.apk'];
-var whiteListHost = ['www.zc-phone.com', 'www.zc-phone.halfthin', 'owm-6912.nitrouspro.com'];
+var whiteListHost = ['www.zc-phone.com', 'www.zc-phone.halfthin', 'owm-6912.nitrouspro.com', 'owmsite.herokuapp.com'];
 
 var app = express();
 
