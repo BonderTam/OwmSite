@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('app');
+var app = require('./app');
 var debug = require('debug')('website:server');
 var http = require('http');
 
@@ -14,7 +14,7 @@ var http = require('http');
  */
 
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
-var port = normalizePort(process.env.OPENSHIFT_NODEJS_PORT || 8080);//hardcode 8080 for openshift
+var port = normalizePort(process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080);//hardcode 8080 for openshift
 app.set('port', port);
 
 /**
