@@ -6,7 +6,7 @@ var path = require('path');
 var appSettings = {
     prod: true,
     path: path.normalize(path.join(__dirname, '..')),
-    port: process.env.NODE_PORT || 3310,
+    port: process.env.NODE_PORT || 8080,
     downloadFolder: 'download/',
     appName: 'zc-phone.apk'
 };
