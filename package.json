@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "0.0.0",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -11,22 +11,22 @@
     "debug": "~2.2.0",
     "express": "~4.13.1",
     "express-anti-leech": "0.0.5",
-    "grunt": "^0.4.5",
-    "grunt-concurrent": "^2.0.4",
-    "grunt-nodemon": "^0.4.0",
     "jade": "~1.11.0",
-    "less-middleware": "1.0.x",
-    "less-plugin-autoprefix": "^1.5.1",
-    "less-plugin-clean-css": "^1.5.1",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-concurrent": "^2.0.4",
+    "grunt-nodemon": "^0.4.0",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-concat": "^0.5.1",
     "grunt-contrib-copy": "^0.8.2",
     "grunt-contrib-jshint": "^0.11.3",
     "grunt-contrib-less": "^1.0.1",
-    "grunt-contrib-watch": "^0.6.1"
+    "grunt-contrib-watch": "^0.6.1",
+    "less-middleware": "1.0.x",
+    "less-plugin-autoprefix": "^1.5.1",
+    "less-plugin-clean-css": "^1.5.1"
   }
 }
